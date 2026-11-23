@@ -61,6 +61,13 @@ export function createHud(canvas, ctx) {
     ctx.fillStyle = COLORS.hudText;
     ctx.font = '13px ' + FONT;
     ctx.fillText(p.driving ? `Driving: ${p.driving.type.name}` : `Weapon: ${p.weapon}`, 26, 64);
+    // Small speedometer readout under the money panel while driving.
+    if (p.driving) {
+      const mph = Math.round(Math.abs(p.driving.speed) * 0.22);
+      ctx.fillStyle = COLORS.hudText;
+      ctx.font = '12px ' + FONT;
+      ctx.fillText(`${mph} mph`, 26, 80);
+    }
 
     // Wanted stars (top-centre).
     const stars = state.wanted.stars;

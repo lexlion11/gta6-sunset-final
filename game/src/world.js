@@ -45,7 +45,8 @@ export function createWorld(random) {
       }
       if (roll < 0.12 && !isDowntown) {
         parks.push({ x: x0 - SIDEWALK, y: y0 - SIDEWALK, w: w + SIDEWALK * 2, h: h + SIDEWALK * 2, kind: 'park' });
-        for (let t = 0; t < 6; t += 1) {
+        // A few more trees than the beach blocks: parks are where the city breathes.
+        for (let t = 0; t < 7; t += 1) {
           trees.push({ x: x0 + random() * w, y: y0 + random() * h, palm: false });
         }
         continue;

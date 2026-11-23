@@ -12,7 +12,8 @@ export function createCamera(canvas) {
   }
 
   function follow(player, dt) {
-    const look = player.driving ? 130 : 60;
+    // Look further ahead when driving so the player sees more of the road ahead.
+    const look = player.driving ? 140 : 60;
     const tx = player.x + player.vx * look / 200;
     const ty = player.y + player.vy * look / 200;
     const ease = 1 - Math.pow(0.001, dt);

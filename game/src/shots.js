@@ -1,6 +1,7 @@
 // The screenshot scenes behind ?shot=N. Each one sets the game into a specific state,
 // runs the real simulation forward for a few seconds under a scripted autopilot, then
 // leaves it for the loop to paint — so each frame is what the game really looks like.
+// Scene 1 is the start screen, 2 a cruise, 3 a police chase, 4 mission 1 mid-delivery.
 import { PLAYER } from './config.js';
 import { enterVehicle } from './player.js';
 import { spawnPoliceCar, spawnCopOnFoot } from './police.js';

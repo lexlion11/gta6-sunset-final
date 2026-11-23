@@ -1,7 +1,7 @@
 {
   "name": "sunset-city",
   "version": "1.0.0",
-  "description": "Sunset City — an original 2D top-down open-world crime game that runs in a browser from static files.",
+  "description": "Sunset City — an original 2D top-down open-world crime game that runs in any desktop browser from static files, no build, no network.",
   "type": "module",
   "main": "main.ts",
   "scripts": {

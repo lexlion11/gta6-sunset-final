@@ -8,6 +8,7 @@ export const ACTION_PAUSE = 4;
 export const ACTION_START = 8;
 export const ACTION_PUNCH = 16;
 export const ACTION_MISSION = 32;
+export const ACTION_HORN = 64;
 
 const LEFT = new Set(['ArrowLeft', 'KeyA']);
 const RIGHT = new Set(['ArrowRight', 'KeyD']);
@@ -28,6 +29,7 @@ export function createInput(canvas, camera) {
     else if (event.code === 'Escape' || event.code === 'KeyP') actions |= ACTION_PAUSE;
     else if (event.code === 'Enter') actions |= ACTION_START;
     else if (event.code === 'Space') actions |= ACTION_PUNCH;
+    else if (event.code === 'KeyH') actions |= ACTION_HORN;
     if (LEFT.has(event.code) || RIGHT.has(event.code) || UP.has(event.code) || DOWN.has(event.code) || event.code === 'Space') {
       event.preventDefault();
     }

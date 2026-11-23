@@ -4,9 +4,9 @@ A 2D top-down open-world crime game that runs in a desktop browser from static f
 HTML5 Canvas and plain ES modules, no libraries, no network requests. Built for the
 make.fun open-world bounty.
 
-You play **Riley**, a small-time hustler building a criminal empire in **Sunset City**, a
-sun-soaked coastal metropolis: steal cars, run missions for your contacts, dodge traffic,
-and survive the police's five-star wanted system.
+You play **Riley**, a street-level hustler clawing your way up in **Sunset City**, a
+sun-drenched coastal town: jack cars, run jobs for your contacts, weave through traffic,
+and stay one step ahead of the cops' five-star wanted system.
 
 ## Play
 

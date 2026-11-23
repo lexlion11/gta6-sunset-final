@@ -90,4 +90,8 @@ export const MISSIONS = [
 
 export const SAVE_KEY = 'sunset-city.save';
 
+/** Colour of the warm sunset light washed over the visible world each frame.
+ *  Raise the alpha for a hotter evening, lower it for a paler noon. */
+export const SUN_TINT = 'rgba(255,196,110,0.09)';
+
 export const MINIMAP = { size: 190, pad: 16 };

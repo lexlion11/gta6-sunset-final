@@ -92,6 +92,9 @@ export function updateAiCar(car, dt, state) {
     policeDrive(car, dt, state);
   } else {
     // Traffic: cruise along the lane, slow for cars ahead, sometimes turn at intersections.
+    // Traffic: cruise along the lane, slow for cars ahead, sometimes turn at intersections.
+    // The speed limit (150) is deliberately below every car type's max speed so
+    // traffic feels sedate next to whatever the player is driving.
     car.turnTimer -= dt;
     const speedLimit = 150;
     if (carAhead(car, state.cars, state)) {

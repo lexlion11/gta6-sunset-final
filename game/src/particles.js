@@ -1,4 +1,6 @@
 // particles.js — tiny visual effect system (explosions, blood, sparks).
+// Note: combat.js owns the in-game particle list; this module is the standalone,
+// class-based flavour kept for reuse and tooling.
 
 export class Particle {
   x: number;

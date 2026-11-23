@@ -74,7 +74,8 @@ export function updatePlayer(dt, state, input, view) {
 
 function fire(state, aim) {
   const p = state.player;
-  p.fireTimer = 0.28;
+  // Fire rate lives in config.js (PLAYER.fireRate) so it can be tuned in one place.
+  p.fireTimer = PLAYER.fireRate;
   const mx = p.x + Math.cos(aim) * 18;
   const my = p.y + Math.sin(aim) * 18;
   state.combat.spawnBullet(mx, my, aim, PLAYER.bulletDamage, 'player');

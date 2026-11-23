@@ -81,3 +81,9 @@ export function rectIntersect(ax, ay, aw, ah, bx, by, bw, bh) {
 export function formatMoney(amount) {
   return '$' + Math.floor(amount).toLocaleString('en-US');
 }
+
+/** Re-map a value from one range to another (like GLSL's smoothstep's linear cousin). */
+export function mapRange(value, inMin, inMax, outMin, outMax) {
+  if (inMax === inMin) return outMin;
+  return outMin + ((value - inMin) / (inMax - inMin)) * (outMax - outMin);
+}

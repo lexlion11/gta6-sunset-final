@@ -3,7 +3,7 @@
 // screen space on top by hud.js. Draw order: ground -> water -> roads -> buildings ->
 // pickups -> markers -> peds -> cops -> rivals -> vehicles -> player -> bullets ->
 // particles -> sun tint, with soft shadows under cars and people.
-import { COLORS, FONT, PLAYER, WORLD } from './config.js';
+import { COLORS, FONT, PLAYER, SUN_TINT, WORLD } from './config.js';
 import { createHud } from './hud.js';
 
 export function createRenderer(canvas) {
@@ -206,11 +206,11 @@ export function createRenderer(canvas) {
     }
     ctx.globalAlpha = 1;
 
-    // Warm sun tint over the visible world area.
+    // Warm sun tint over the visible world area (tunable in config.js as SUN_TINT).
     const cam = state.camera.cam;
     const vw = view.viewW / view.scale;
     const vh = view.viewH / view.scale;
-    ctx.fillStyle = 'rgba(255,196,110,0.09)';
+    ctx.fillStyle = SUN_TINT;
     ctx.fillRect(cam.x - vw / 2 - 60, cam.y - vh / 2 - 60, vw + 120, vh + 120);
   }
 

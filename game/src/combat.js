@@ -70,7 +70,8 @@ export function createCombat(state) {
       });
     }
     state.camera.shake(0.9);
-    // Splash damage to nearby actors.
+    // Splash damage to nearby actors: anyone inside the blast radius cooks, the
+    // player only takes 70% of the radius (a little grace for the trigger-happy).
     const peds = state.peds;
     for (let i = peds.length - 1; i >= 0; i -= 1) {
       const ped = peds[i];

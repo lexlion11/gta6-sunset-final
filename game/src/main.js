@@ -15,6 +15,7 @@ import { spawnTraffic, spawnParked, updateAiCar, resolveCarCollisions } from './
 import { spawnPeds, updatePeds } from './pedestrians.js';
 import { createWanted, updatePolice } from './police.js';
 import { createCombat, EVENT_PLAYER_DEAD } from './combat.js';
+import { ACTION_HORN } from './input.js';
 import { createMissionEngine } from './missions.js';
 import { stageShot } from './shots.js';
 
@@ -87,6 +88,8 @@ function createGame() {
     state.events = 0;
     const actions = updatePlayer(dt, state, inputObj, currentView());
     if (!isShot) handleActions(actions, inputObj);
+    // Lean on the horn: two short honks while driving (or on foot, why not).
+    if (actions & ACTION_HORN) audio.horn();
 
     // Traffic and police cars.
     for (let i = state.cars.length - 1; i >= 0; i -= 1) {

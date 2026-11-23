@@ -127,5 +127,10 @@ export function createAudio() {
       engineGain.gain.value = 0.03 + Math.min(0.05, Math.abs(speed) / 4000);
     },
     explosion() { noiseBurst(0.5, 0.5, 800); tone(90, 0.4, 'square', 0.2, 30); },
+    /** Two short honks when the player leans on the horn (H). */
+    horn() {
+      tone(440, 0.09, 'square', 0.16);
+      setTimeout(() => tone(440, 0.09, 'square', 0.16), 130);
+    },
   };
 }

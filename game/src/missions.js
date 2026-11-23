@@ -1,7 +1,7 @@
 // Story missions: five scores given by contacts around the city. A mission starts when the
 // player steps into the yellow marker; a phone-style panel lays out the job, ENTER accepts.
 // Each mission is a small state machine of stages with markers the HUD and minimap show.
-import { MISSIONS } from './config.js';
+import { MISSIONS, PLAYER } from './config.js';
 
 export const MISSION_STATE_IDLE = 'idle';       // marker waiting
 export const MISSION_STATE_OFFER = 'offer';     // phone panel up
@@ -241,8 +241,11 @@ export function createMissionEngine(state) {
     complete() {
       const m = MISSIONS[this.index];
       state.player.money += m.reward;
+      // Completion bonus: a little first aid on the house, capped at max health.
+      const healed = Math.min(PLAYER.maxHealth - state.player.health, 25);
+      if (healed > 0) state.player.health += healed;
       state.audio.chime();
-      this.notify(`${m.name} complete! +$${m.reward}`);
+      this.notify(`${m.name} complete! +$${m.reward}${healed > 0 ? ` (+${healed} health)` : ''}`);
       this.index += 1;
       this.state = MISSION_STATE_IDLE;
       this.stage = 0;

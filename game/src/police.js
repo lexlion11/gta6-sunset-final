@@ -126,7 +126,8 @@ export function updatePolice(dt, state) {
       state.combat.muzzle(cop.x + Math.cos(aim) * 14, cop.y + Math.sin(aim) * 14, aim);
       state.audio.gunshot(0.5);
     }
-    // Bust: standing next to a player on foot with no weapon out.
+    // Bust: standing next to a player on foot with no weapon out. The 1.4s
+    // window gives the player a fair chance to bolt before the cuffs come out.
     if (!player.driving && d < 30) {
       cop.bustTimer += dt;
       if (cop.bustTimer > 1.4) {

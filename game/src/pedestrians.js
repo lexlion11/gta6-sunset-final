@@ -1,6 +1,7 @@
 // Pedestrians: NPCs strolling the sidewalks, fleeing when shots are fired near them, and
 // dropping cash when they go down. They wander between random sidewalk points and react
-// to gunfire within earshot.
+// to gunfire within earshot. Fleeing peds run ~2.6x their stroll speed and only calm down
+// once they have put 220px between themselves and the player.
 import { COLORS, PED_COUNT, WORLD } from './config.js';
 import { collidesWorld } from './world.js';
 
